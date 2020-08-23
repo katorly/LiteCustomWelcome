@@ -1,0 +1,12 @@
+name: LiteCustomWelcome
+version: 1.1
+main: com.gmail.zhushijie.litecustomwelcome.LiteCustomWelcome
+authors: [Zhushijie]
+description: A light plugin which can help you easily set the join and quit message of every player
+commands:
+  litecustomwelcome:
+    description: Use /lcwc help instead of /help LiteCustomWelcome!
+    usage: /lcwc help
+    aliases: [litecwelcome,lcwc]
+    permission: litecustomwelcome.use
+    permission-message: You don't have permission to perform this command.
