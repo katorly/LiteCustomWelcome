@@ -13,7 +13,7 @@ import java.util.Objects;
 public class CommandHandler implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        FileConfiguration config = LiteCustomWelcome.INSTANCE.getConfig();
+        FileConfiguration mconfig = LiteCustomWelcome.Messagesconfig.getConfig();
         if (command.getName().equalsIgnoreCase("litecustomwelcome")) {
             if (args.length < 1) { //若只输入了个/lcwc则弹出插件帮助
                 if (!(sender instanceof Player)) {
@@ -25,9 +25,9 @@ public class CommandHandler implements CommandExecutor {
             } else if (Objects.equals(args[0], "reload")) { //重载插件配置的指令 lcwc reload
                 LiteCustomWelcome.INSTANCE.reloadConfig();
                 LiteCustomWelcome.INSTANCE.saveConfig();
-                sender.sendMessage(config.getString("plugin-prefix").replace("&","§") + config.getString("reload-success").replace("&","§"));
+                sender.sendMessage(mconfig.getString("plugin-prefix").replace("&","§") + mconfig.getString("reload-success").replace("&","§"));
             } else if (Objects.equals(args[0], "help")) { //查看插件帮助的指令 lcwc help
-                List<String> helpmessage = config.getStringList("help-message");
+                List<String> helpmessage = mconfig.getStringList("help-message");
                 int i = 0;
                 for (int length = helpmessage.size(); i < length; i++) {
                     sender.sendMessage(helpmessage.get(i).replace("&","§"));

@@ -1,11 +1,11 @@
 #-------------------
 #\LiteCustomWelcome/
 #-------------------
+#config.yml
 #插件作者:主世界
-#本插件已免费发布并在Gitee上开源
-#可用变量: <player>
+#本插件已免费发布并在Github上开源
 
-#一律支持颜色代码
+#一律支持颜色代码,可用变量: <player>
 #玩家加入消息
 player-join: '&f&l[&a&l+&f&l] &r&e玩家 <player> 加入了服务器!'
 #玩家退出消息
@@ -16,21 +16,15 @@ welcome-subtitle: '&f来到服务器!'
 #设置Title文字的展示时间,以秒为单位(若上面设的是none可以忽略此处)
 title-time: 3
 #设置在玩家加入后在玩家头顶燃放的欢迎烟花
-#支持五种类型: RED,YELLOW,BLUE,GREEN,false;其中false表示不燃放烟花
+#支持五种类型: RED,YELLOW,BLUE,GREEN,none;其中none表示不燃放烟花
 firework: 'RED'
+#设置在玩家加入时给予玩家的药水效果;若不需要本功能请将第一行设为none
+#药水效果(格式:药水效果类型,持续时间,效果等级):
+potions:
+  - NIGHT_VISION,30,2
+  - SATURATION,40,3
+  - GLOW,20,2
 #设置加入后以玩家名义向聊天栏发送的内容,一行一条;若需执行指令请使用反斜杠
 player-chat:
   - '/help'
   - '大家好!'
-
-#设置插件消息前缀
-plugin-prefix: '&8&l[&b&lLiteCustomWelcome&8&l] '
-#重载插件配置成功
-reload-success: '&7插件配置重载成功!'
-#插件帮助消息
-help-message:
-  - '---------&8&l[&b&lLiteCustomWelcome&8&l]&7&l插件帮助---------'
-  - '&7指令前缀 /litecustomwelcome 可简写为 /litecwelcome 或 /lcwc'
-  - '&7&l/lcwc reload &r&7重载插件配置'
-  - '&7&l/lcwc help &r&7查看插件帮助'
-  - '---------&8&l[&b&lLiteCustomWelcome&8&l]&7&l插件帮助---------'

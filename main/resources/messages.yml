@@ -1,0 +1,18 @@
+#-------------------
+#\LiteCustomWelcome/
+#-------------------
+#messages.yml
+#插件作者:主世界
+#本插件已免费发布并在Github上开源
+
+#设置插件消息前缀
+plugin-prefix: '&8&l[&b&lLiteCustomWelcome&8&l] '
+#重载插件配置成功
+reload-success: '&7插件配置重载成功!'
+#插件帮助消息
+help-message:
+  - '---------&8&l[&b&lLiteCustomWelcome&8&l]&7&l插件帮助---------'
+  - '&7指令前缀 /litecustomwelcome 可简写为 /litecwelcome 或 /lcwc'
+  - '&7&l/lcwc reload &r&7重载插件配置'
+  - '&7&l/lcwc help &r&7查看插件帮助'
+  - '---------&8&l[&b&lLiteCustomWelcome&8&l]&7&l插件帮助---------'

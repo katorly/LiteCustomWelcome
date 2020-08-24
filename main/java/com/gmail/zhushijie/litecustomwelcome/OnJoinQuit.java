@@ -12,6 +12,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.meta.FireworkMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import java.util.List;
 import java.util.Objects;
@@ -51,6 +53,16 @@ public class OnJoinQuit implements Listener {
             FireworkMeta fireworkMeta = firework.getFireworkMeta();
             fireworkMeta.addEffect(builder.withFlicker().withTrail().withColor(Color.LIME).withFade(Color.GREEN).with(FireworkEffect.Type.BURST).build());
             firework.setFireworkMeta(fireworkMeta);
+        }
+        List<String> potions = config.getStringList("potions");
+        if (!Objects.equals(potions.get(0),"none")) {
+            for (String potion : potions) {
+                String[] potionsplit = potion.split(",");
+                String potiontype = potionsplit[0];
+                int potiontime = Integer.parseInt(potionsplit[1]) * 20;
+                int potionlevel = Integer.parseInt(potionsplit[2]);
+                player.addPotionEffect(new PotionEffect(PotionEffectType.getByName(potiontype), potiontime, potionlevel));
+            }
         }
         List<String> playerchat = config.getStringList("player-chat");
         if (playerchat.size() != 0) { //以玩家名义执行指令
